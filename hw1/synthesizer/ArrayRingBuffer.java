@@ -1,5 +1,7 @@
 package synthesizer;
 // package <package name>;
+import edu.princeton.cs.algs4.In;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -30,6 +32,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
      * throw new RuntimeException("Ring buffer overflow"). Exceptions
      * covered Monday.
      */
+    @Override
     public void enqueue(T x) {
         if (isFull()) {
             throw new RuntimeException("Ring buffer overflow");
@@ -45,6 +48,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
      * throw new RuntimeException("Ring buffer underflow"). Exceptions
      * covered Monday.
      */
+    @Override
     public T dequeue() {
         if (isEmpty()) {
             throw new RuntimeException("Ring buffer underflow");
@@ -59,6 +63,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /**
      * Return oldest item, but don't remove it.
      */
+    @Override
     public T peek() {
         if (isEmpty()) {
             throw new RuntimeException("Ring buffer underflow");
@@ -108,7 +113,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
             return results;
         }
     }
-
+/*
     public boolean equals(Object o) {
         if (o == null) {
             return false;
@@ -128,7 +133,8 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
             if (!rb[index].equals(item)) {
                 return false;
             }
+            index++;
         }
         return true;
-    }
+    }*/
 }
