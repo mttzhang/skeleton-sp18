@@ -25,6 +25,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         first = 0;
         last = 0;
         fillCount = 0;
+        wizP = -1;
     }
 
     /**
