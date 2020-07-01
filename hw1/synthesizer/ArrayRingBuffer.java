@@ -1,12 +1,12 @@
 package synthesizer;
 // package <package name>;
-import edu.princeton.cs.algs4.In;
+//import edu.princeton.cs.algs4.In;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
-public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
+public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> implements Iterable<T> {
     /* Index for the next dequeue or peek. */
     private int first;            // index for the next dequeue or peek
     /* Index for the next enqueue. */
@@ -137,4 +137,22 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         }
         return true;
     }*/
+    public static void main(String[] args) {
+        BoundedQueue<Integer> a = new ArrayRingBuffer<Integer>(5);
+        a.enqueue(1);
+        a.enqueue(2);
+        a.enqueue(3);
+        a.enqueue(4);
+        a.enqueue(5);
+
+        Iterator it = a.iterator();
+        System.out.println(it.hasNext());
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.next());
+        System.out.println(it.hasNext());
+
+    }
 }
